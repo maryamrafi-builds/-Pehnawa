@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PEHNAWA | Western Wear</title>
+
+    <link rel="stylesheet" href="easternpg.css">
+
+     <link rel="stylesheet" href="images/font/icon/css/all.min.css">
+    <link rel="stylesheet" href="images/font/icon/css/fontawesome.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+    <div class="logo"> 
+    <img src="logo2.png" alt="PEHNAWA">
+    </div>
+    <nav>
+        <a href="homepage.html">Home</a>
+        <div class="dropdown">
+        <a href="#collections" class="dropdown-link">
+            Collections <span class="arrow">⏷</span>
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="easternpage.html" class="dropdown-item">
+                <span>Eastern Wear</span>
+                <span class="right-arrow">→</span>
+            </a>
+
+            <a href="westernpage.html" class="dropdown-item">
+                <span>Western Wear</span>
+                <span class="right-arrow">→</span>
+            </a>
+        </div>
+    </div>
+        <a href="#shop">Shop</a>
+        <a href="#about">Blog</a>
+        <a href="#contact">Contact</a>
+    
+    </nav>
+
+    <div  class="header-icons">
+        <a href="#" class="cart" title="Wishlist">
+         <i class="fa-solid fa-heart"></i>
+        <span id="wish_count">0</span> 
+            </a>
+    <a href="#" class="cart" title="shopping Cart">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span id="cart_count">0</span>
+</a>
+
+
+<a href="login.html" class="account" id="account-link" title="Login">
+    <i class="fa-regular fa-user"></i>
+</a>
+        </div>
+</header>
+
+
+    <!-- HERO SECTION -->
+    <section class="eastern-hero">
+
+        <div class="hero-content">
+            <p class="eyebrow">THE WESTERN EDIT</p>
+
+            <h1>Modern Looks.<br>Timeless Confidence.</h1>
+
+            <p>
+                Discover everyday essentials, elegant dresses
+                and contemporary styles made for your story.
+            </p>
+
+            <a href="#collection" class="shop-btn">
+                EXPLORE COLLECTION →
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+        <p class="eyebrow">YOUR STYLE, YOUR STORY</p>
+
+        <h2>Eastern Wear Collection</h2>
+
+        <p>
+            From effortless everyday outfits to statement looks,
+            explore styles that bring comfort and elegance together.
+        </p>
+    </section>
+
+
+    <!-- CATEGORY FILTERS -->
+   
+<section class="categories">
+
+    <button class="category-btn active"
+            onclick="filterProducts('all', this)">
+        All
+    </button>
+
+    <button class="category-btn"
+            onclick="filterProducts('formal', this)">
+        Formal
+    </button>
+
+    
+
+    <button class="category-btn"
+            onclick="filterProducts('coord', this)"> Co-ord Sets</button>
+
+</section>
+
+
+    <!-- PRODUCTS -->
+    <section class="collection" id="collection">
+
+        <div class="section-heading" id="shop">
+            <div>
+                <p class="eyebrow">MADE FOR EVERY MOMENT</p>
+                <h2>Explore Our Styles</h2>
+            </div>
+
+            <span id="product-count">16 Products</span>
+        </div>
+
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/eastformal.jpg" alt="silk Embroidered lenga choli">
+                    <span class="tag">NEW</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>silk Embroidered lenga choli</h3>
+                    <span class="price">Rs.7,000</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('silk Embroidered lenga choli')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                     <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'denium skrit')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card" data-category="top">
+
+                <div class="product-image">
+                    <img src="images/img1.jpeg" alt="white Embroidered Suit">
+                </div>
+
+                <div class="product-info">
+                    <h3>white Embroidered Suit</h3>
+                    <span class="price">Rs. 3,999</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('white Embroidered Suit')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'white Embroidered Suit')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/2picsblue.jpg" alt="blue and white bow set">
+                </div>
+
+                <div class="product-info">
+                    <h3>blue and white bow set</h3>
+                    <span class="price">Rs. 2,100</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('blue and white bow set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'blue and white bow set')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/eastblueslikformal.jpg" alt=" blue silk formal">
+                    <span class="tag">TRENDING</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>blue silk formal</h3>
+                    <span class="price">Rs. 6,500</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('blue silk formal')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'blue silk formal')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/img3.jpeg" alt="Olive Printed Palazzo Set">
+                </div>
+
+                <div class="product-info">
+                    <h3>Olive Printed Palazzo Set</h3>
+                    <span class="price">Rs. 3,999</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('Olive Printed Palazzo Set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'Olive Printed Palazzo Set')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/eastblackwhite.jpg" alt="black and white Embroidered">
+                </div>
+
+                <div class="product-info">
+                    <h3>black and white Embroidered </h3>
+                    <span class="price">Rs. 4,999</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('black and white Embroidered')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'black and white Embroidered')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/eastsimple.jpg" alt="simple co-ord set">
+                </div>
+
+                <div class="product-info">
+                    <h3>simple co-ord sets</h3>
+                    <span class="price">Rs. 2,999</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('simple co-ord set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'simple co-ord set')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/img8.jpeg"alt="Sage Green Kurta Set">
+                </div>
+
+                <div class="product-info">
+                    <h3>Sage Green Kurta Set</h3>
+                    <span class="price">Rs. 4,399</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('Sage Green Kurta Set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'Sage Green Kurta Set')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 9 -->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/easternpinkcordset.jpg"alt="pink coord set">
+                </div>
+
+                <div class="product-info">
+                    <h3>pink coord set</h3>
+                    <span class="price">Rs. 3,500</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('pink coord set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'pink coord set')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 10 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/eastmahroonformal.jpg"alt="mahroon silk formal">
+                </div>
+
+                <div class="product-info">
+                    <h3>mahroon silk formal</h3>
+                    <span class="price">Rs. 4,699</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('mahroon silk formal')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'mahroon silk formal')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 11 -->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/eastsolidbrowncordset.jpg"alt="Solid  brown coord set ">
+                </div>
+
+                <div class="product-info">
+                    <h3>Solid  brown coord set</h3>
+                    <span class="price">Rs. 3,399</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('Solid  brown coord set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'Solid  brown coord set ')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 12 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/purpformal.jpg"alt="purple formal ">
+                </div>
+
+                <div class="product-info">
+                    <h3>purple formal</h3>
+                    <span class="price">Rs. 7,399</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('purple formal')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'purple formal')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 13 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/goldformal.jpg"alt="beautiful  gold formal">
+                </div>
+
+                <div class="product-info">
+                    <h3>beautiful  gold formal</h3>
+                    <span class="price">Rs. 8,999</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('beautiful  gold formal')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'beautiful  gold formal')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 14 -->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/eastrcordset.jpg"alt=" solid coord set">
+                </div>
+
+                <div class="product-info">
+                    <h3>solid coord set</h3>
+                    <span class="price">Rs. 2,599</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('solid coord set')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'solid coord set')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 15 -->
+            <div class="product-card" data-category="formal">
+
+                <div class="product-image">
+                    <img src="images/eastformal1.jpg"alt="silver  silk formal">
+                </div>
+
+                <div class="product-info">
+                    <h3>silver  silk formal</h3>
+                    <span class="price">Rs. 7,399</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('silver  silk formal')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'silver  silk formal')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCT 16-->
+            <div class="product-card" data-category="coord">
+
+                <div class="product-image">
+                    <img src="images/img9.jpeg"alt="Maroon Embroidered Tunic">
+                </div>
+
+                <div class="product-info">
+                    <h3>Maroon Embroidered Tunic</h3>
+                    <span class="price">Rs. 3,999</span>
+
+                    <button class="bag-btn"
+                    onclick="addToBag('Maroon Embroidered Tunic')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Add to Bag
+                    </button>
+                    <button class="wishlist-btn"
+                     onclick="toggleWishlist(this, 'Maroon Embroidered Tunic')"
+                      title="Add to Wishlist"
+                        aria-label="Add to Wishlist">
+
+                           <i class="fa-regular fa-heart"></i>
+
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            
+
+        </div>
+    </section>
+
+
+   <!-- FOOTER -->
+      
+        <section class="benifits ">
+           <div class="benifit reveal">
+             <i class="fa-solid fa-truck"></i>
+            <h4>Fast & Reliable Delivery </h4>
+            <p>Your order, on time.</p>
+           </div>
+
+
+           <div class="benifit reveal">
+            <i class="fa-regular fa-circle-check"></i>
+            <h4>Secure Payments </h4>
+            <p>Shop with confidence.</p>
+           </div>
+
+     
+           <div class="benifit reveal">
+        <i class="fa-regular fa-heart"></i>           
+        <h4>Easy Returns </h4>
+            <p>Hassie-free experience.</p>
+           </div>
+
+       
+           <div class="benifit reveal">
+            <i class="fa-brands fa-pagelines"></i>            
+            <h4>Sustainable Choices </h4>
+            <p>A kinder tomorrow.</p>
+           </div>
+
+        </section>
+
+        <!-- main footer         -->
+         <footer class="site-footer">
+        <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="homepage.html" class="footer-logo">
+        <img src="logo2.png" alt="Pehnawa Logo">
+      </a>
+
+      <p class="brand-description">
+        Pehnawa blends timeless Eastern elegance with
+        modern Western style, helping you express your
+        unique story through fashion.</p>
+
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="homepage.html">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="easternpage.html">Eastern Wear</a>
+      <a href="westernpage.html">Western Wear</a>
+      <a href="#about">About Us</a>
+      
+    </div>
+
+    <!-- Customer Service -->
+    <div class="footer-column">
+      <h3>Customer Service</h3>
+      <a href="#shipping">Shipping & Returns</a>
+      <a href="#size-guide">Size Guide</a>
+      <a href="#payment">Payment Methods</a>
+      <a href="#faq">FAQs</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms & Conditions</a>
+    </div>
+
+    <!-- Newsletter and Contact -->
+    <div class="footer-column footer-contact">
+      <h3>Stay Connected</h3>
+      <p>Subscribe to our newsletter for the latest
+        collections, updates and special offers.</p>
+
+      <form class="newsletter-form"
+            onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <input type="email"
+               placeholder="Enter your email address"
+               aria-label="Email address"
+               required>
+        <button type="submit" aria-label="Subscribe">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2026 Pehnawa. All rights reserved.</p>
+    <p>Designed with care · Wear Your Story.</p>
+  </div>
+</footer>
+    <script src="eastern.js"></script>
+
+</body>
+</html>
