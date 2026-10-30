@@ -46,12 +46,10 @@ try{
     }
 
 } catch (SQLIntegrityConstraintViolationException e) {
-    out.println("<h3>Username or email already exists.</h3>");
-    out.println("<a href='sign_up.html'>Try again</a>");
+    response.sendRedirect("sign_up.html?error=exists");
 
 } catch (Exception e) {
     application.log("Signup error", e);
-    out.println("<h3>Registration failed. Please try again.</h3>");
-    out.println("<a href='sign_up.html'>Back to signup</a>");
+    response.sendRedirect("sign_up.html?error=failed");
 }
 %>

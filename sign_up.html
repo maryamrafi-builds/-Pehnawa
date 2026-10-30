@@ -10,51 +10,19 @@
 
 </head>
 <body>
-    <header class="header">
+   <header class="header">
     <div class="logo"> 
     <img src="logo2.png" alt="PEHNAWA">
     </div>
-    <nav>
-        <a href="homepage.html">Home</a>
-        <div class="dropdown">
-        <a href="#collections" class="dropdown-link">
-            Collections <span class="arrow">⏷</span>
-        </a>
-
-        <div class="dropdown-menu">
-            <a href="easternpage.html" class="dropdown-item">
-                <span>Eastern Wear</span>
-                <span class="right-arrow">→</span>
-            </a>
-
-            <a href="westernpage.html" class="dropdown-item">
-                <span>Western Wear</span>
-                <span class="right-arrow">→</span>
-            </a>
-        </div>
-    </div>
-        <a href="#shop">Shop</a>
-        <a href="#about">Blog</a>
-        <a href="#contact">Contact</a>
-    
-    </nav>
+   
 
     <div  class="header-icons">
-        <a href="#" class="cart" title="Wishlist">
-         <i class="fa-solid fa-heart"></i>
-        <span id="wish_count">0</span> 
-            </a>
-    <a href="#" class="cart" title="shopping Cart">
-    <i class="fa-solid fa-bag-shopping"></i>
-    <span id="cart_count">0</span>
-</a>
-
-
-<a href="login.html" class="account" id="account-link" title="Login">
-    <i class="fa-regular fa-user"></i>
-</a>
+       
+ <nav>
+        <a href="homepage.html"><i class="fa-solid fa-arrow-left-long" ></i> Back to Home</a>
+ </nav>
         </div>
-</header>
+</header> 
  
     <div class="container anim">
                <div class="logo ">PEHNAWA</div>
@@ -74,6 +42,7 @@
                 <label for="email"></label>
                 <input type="email" id="email" name="email" placeholder="Enter your Email" required>
                 <small id="emailMessage"></small>
+                 <p id="email-error" class="error-message"></p> <!--for error msg -->
             </div>
 
             <div class="form-group">
@@ -106,6 +75,25 @@
 
     </div>
     
+    <script>
+
+                const params = new URLSearchParams(window.location.search);
+
+                const error = params.get("error");
+
+                const errorMessage = document.getElementById("email-error");
+
+                if (error === "exists") {
+                    errorMessage.textContent =
+                        "This email is already registered. Please log in.";
+                }
+
+                else if (error === "failed") {
+                    errorMessage.textContent =
+                        "Registration failed. Please try again.";
+                }
+
+    </script>
     
 </body>
 </html>

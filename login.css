@@ -1,10 +1,9 @@
         .header {
-              position: absolute;
-             top: 0;
+            position: absolute;
+            top: 0;
             left: 0;
             width: 100%;
             height: 50px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -36,113 +35,8 @@
         }
         nav a:hover {
        color: #912727;
-        }
-
-/* dropdwn of collection */
-
-/* Navigation */
-
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-/* Collections link */
-.dropdown-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0;
-    line-height: normal;
-    color: #89422e;
-    text-decoration: none;
-}
-
-/* Small arrow */
-.arrow {
-    font-size: 16px;
-    transition: transform 0.3s ease;
-}
-
-/* Dropdown box */
-.dropdown-menu {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: -18px;
-    width: 190px;
-    padding: 8px;
-    background-color: #FAEEE2;
-    border: 1px solid #f0dfd2;
-    border-radius: 8px;
-    box-shadow: 0 8px 22px rgba(89, 53, 38, 0.15);
-    z-index: 1000;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease,
-                transform 0.3s ease,
-                visibility 0.3s ease;
-}
-
-/* Each menu item */
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 13px 12px;
-    color: #593526;
-    font-size: 13px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease,
-                padding 0.3s ease;
-}
-
-/* Hover on menu items */
-.dropdown-item:hover {
-    background-color: #f3e2d5;
-    color: #89422e;
-    padding-left: 17px;
-}
-
-/* Right arrow */
-.right-arrow {
-    color: #7d2300;
-    transition: transform 0.3s ease;
-}
-
-.dropdown-item:hover .right-arrow {
-    transform: translateX(4px);
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Rotate the small arrow */
-.dropdown:hover .arrow {
-    transform: rotate(180deg);
-}
-nav a,
-.dropdown-item {
-    text-decoration: none;
-}
-
-nav a:hover,
-.dropdown-item:hover {
-    text-decoration: none;
-}
-       
-/* Account and Cart Icons */
+        }     
+/* left arrow */
 .header-icons {
     display: flex;
     align-items: center;
@@ -150,48 +44,6 @@ nav a:hover,
         margin-right: 50px;
 } 
 
-.account {
-    color: #593526;
-    font-size: 20px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.account:hover {
-    color: #ab5530;
-    transform: translateY(-2px);
-}
-
-
-.cart {
-    color: #593526;
-    font-size: 20px;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    transition: 0.3s ease;
-}
-
-.cart span {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #c0392b;
-    color: white;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: bold;
-}
-
-.cart:hover {
-    color: #b64e3b;
-    transform: translateY(-2px);
-}
 nav a{
      display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -201,35 +53,6 @@ nav a{
     color: #823000f3;    /*back to home hover*/
 }
 
-/* user account corcle */
-.account.profile-circle {
-    width: 36px;
-    height: 36px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    /* background-color: #89422e;  */
-    color: #ffffff;
-
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-
-    box-sizing: border-box;
-    flex-shrink: 0;
-    padding: 0;
-}
-
-.account.profile-circle:hover {
-    background-color: #593526;
-    color: #ffffff;
-}
-
-        
-        
         /* Page styling */
         body {
             margin: 0;
