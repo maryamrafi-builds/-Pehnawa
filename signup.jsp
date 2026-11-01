@@ -36,16 +36,17 @@ try{
 
         ps.executeUpdate();
 
-        // Show success only after MySQL inserts the account.
+       // Show success only after MySQL inserts the account.
         out.println("<!DOCTYPE html><html><body>");
         out.println("<script>");
         out.println("alert('Account created successfully!');");
         out.println("window.location.href = 'homepage.html';");
         out.println("</script>");
         out.println("</body></html>");
-    }
-
-} catch (SQLIntegrityConstraintViolationException e) {
+        
+        }
+} 
+catch (SQLIntegrityConstraintViolationException e) {
     response.sendRedirect("sign_up.html?error=exists");
 
 } catch (Exception e) {

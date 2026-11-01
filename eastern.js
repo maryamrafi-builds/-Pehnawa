@@ -259,85 +259,203 @@ function updateCartCount() {
 }
 
 
-/* =====================================
-   6. USER PROFILE INITIAL
-===================================== */
+/* =================================
+   6. USER ACCOUNT AND DROPDOWN
+================================= */
 
 function updateAccountStatus() {
+
     const accountLink = document.getElementById("account-link");
+
+    const profileName = document.getElementById("profile-name");
+
+    const profileEmail = document.getElementById("profile-email");
+
+    const profileAvatar = document.getElementById("profile-avatar");
+
+    const profileMenu = document.getElementById("profile-menu");
 
     if (!accountLink) return;
 
     fetch("user_status.jsp", {
         cache: "no-store"
     })
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("Could not load login status");
+
+    .then(response => {
+
+        if (!response.ok) {
+            throw new Error("Could not load account status");
+        }
+
+        return response.text();
+
+    })
+
+    .then(data => {
+
+        data = data.trim();
+
+        /* USER IS LOGGED IN */
+
+        if (data.startsWith("IN|")) {
+
+            const parts = data.split("|");
+
+            const userName = parts[1] || "";
+
+            const userEmail = parts[2] || "";
+
+            const initial = userName.trim()
+                ? userName.trim().charAt(0).toUpperCase()
+                : "U";
+
+
+            // Update the existing user icon
+
+            accountLink.textContent = initial;
+
+            accountLink.classList.add("profile-circle");
+
+            accountLink.dataset.loggedIn = "true";
+
+            Object.assign(accountLink.style, {
+
+                width: "30px",
+                height: "30px",
+                minWidth: "30px",
+
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+
+                backgroundColor: "#245C56",
+                color: "#ffffff",
+
+                borderRadius: "50%",
+                padding: "0",
+
+                fontSize: "14px",
+                fontWeight: "bold",
+                lineHeight: "1",
+
+                textDecoration: "none",
+                boxSizing: "border-box"
+
+            });
+
+            accountLink.href = "login.html";
+
+            accountLink.title = "My Profile";
+
+
+            // Update dropdown information
+
+            if (profileName) {
+                profileName.textContent = userName;
             }
 
-            return response.text();
-        })
-        .then(function(data) {
-            data = data.trim();
-
-            if (data.startsWith("IN|")) {
-                const userName = data.substring(3).trim();
-
-                const initial = userName
-                    ? userName.charAt(0).toUpperCase()
-                    : "U";
-
-                accountLink.textContent = initial;
-
-                accountLink.classList.add("profile-circle");
-
-                Object.assign(accountLink.style, {
-                    width: "30px",
-                    height: "30px",
-                    minWidth: "30px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: "#245C56",
-                    color: "#ffffff",
-                    borderRadius: "50%",
-                    padding: "0",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                    lineHeight: "1",
-                    textDecoration: "none",
-                    boxSizing: "border-box"
-                });
-
-                accountLink.href = "login.html";
-                accountLink.title = "My Profile";
-
-            } else {
-                accountLink.innerHTML =
-                    '<i class="fa-regular fa-user"></i>';
-
-                accountLink.classList.remove("profile-circle");
-                accountLink.removeAttribute("style");
-
-                accountLink.href = "login.html";
-                accountLink.title = "Login";
+            if (profileEmail) {
+                profileEmail.textContent = userEmail;
             }
-        })
-        .catch(function(error) {
-            console.error("Account status error:", error);
-        });
+
+            if (profileAvatar) {
+                profileAvatar.textContent = initial;
+            }
+
+        }
+
+        /* USER IS NOT LOGGED IN */
+
+        else {
+
+            accountLink.innerHTML =
+                '<i class="fa-regular fa-user"></i>';
+
+            accountLink.classList.remove("profile-circle");
+
+            accountLink.dataset.loggedIn = "false";
+
+            accountLink.removeAttribute("style");
+
+            accountLink.href = "login.html";
+
+            accountLink.title = "Login";
+
+            if (profileMenu) {
+                profileMenu.classList.remove("show");
+            }
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.error("Account status error:", error);
+
+    });
+
 }
 
 
-/* =====================================
-   7. INITIALIZE HEADER AND WISHLIST
-===================================== */
+/* =================================
+   7. DROPDOWN CLICK FUNCTIONALITY
+================================= */
 
 document.addEventListener("DOMContentLoaded", function() {
-    updateWishlistCount();
-    loadWishlistHearts();
-    updateCartCount();
-    updateAccountStatus();
+
+    const accountLink = document.getElementById("account-link");
+
+    const profileMenu = document.getElementById("profile-menu");
+
+    if (!accountLink || !profileMenu) return;
+
+
+    // Open menu when logged-in user clicks icon
+
+    accountLink.addEventListener("click", function(event) {
+
+        if (accountLink.dataset.loggedIn === "true") {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            profileMenu.classList.toggle("show");
+
+        }
+
+    });
+
+
+    // Close menu when user clicks outside
+
+    document.addEventListener("click", function(event) {
+
+        if (
+            !profileMenu.contains(event.target) &&
+            !accountLink.contains(event.target)
+        ) {
+
+            profileMenu.classList.remove("show");
+
+        }
+
+    });
+
 });
-//   user is login 
+
+
+/*
+   8. INITIALIZE PAGE
+ */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    updateCartCount();
+
+    updateWishlistCount();
+
+    updateAccountStatus();
+
+});
