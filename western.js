@@ -1,8 +1,4 @@
 
-/* =====================================
-   1. PRODUCT FILTERING
-===================================== */
-
 function filterProducts(category, button) {
     const products = document.querySelectorAll(".product-card");
     let count = 0;
@@ -36,12 +32,6 @@ function filterProducts(category, button) {
             count + (count === 1 ? " Product" : " Products");
     }
 }
-
-
-/* =====================================
-   2. PRODUCT SCROLL ANIMATION
-===================================== */
-
 document.addEventListener("DOMContentLoaded", function() {
     const products = document.querySelectorAll(".product-card");
 
@@ -174,13 +164,6 @@ function loadWishlistHearts() {
     );
 }
 
-
-/* =====================================
-   4. ADD TO CART
-===================================== */
-
-
-
 function addToBag(productName) {
 
     fetch("add_to_cart.jsp?product=" + encodeURIComponent(productName), {
@@ -227,14 +210,6 @@ function addToBag(productName) {
         console.error("Cart error:", error);
     });
 }
-
-
-
-
-/* =====================================
-   5. UPDATE CART COUNTER
-===================================== */
-
 function updateCartCount() {
     const cartCount = document.getElementById("cart_count");
 
@@ -257,11 +232,6 @@ function updateCartCount() {
             console.error("Cart count error:", error);
         });
 }
-
-
-/* =================================
-   6. USER ACCOUNT AND DROPDOWN
-================================= */
 
 function updateAccountStatus() {
 
@@ -396,11 +366,6 @@ function updateAccountStatus() {
     });
 
 }
-
-
-/* =================================
-   7. DROPDOWN CLICK FUNCTIONALITY
-================================= */
 
 document.addEventListener("DOMContentLoaded", function() {
 

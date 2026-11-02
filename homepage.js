@@ -1,6 +1,3 @@
-/* =================================
-   1. WISHLIST HEART
-================================= */
 
 function toggleWishlist(button) {
 
@@ -15,9 +12,8 @@ function toggleWishlist(button) {
 }
 
 
-/* =================================
-   2. SCROLL REVEAL ANIMATION
-================================= */
+/* 2. SCROLL REVEAL ANIMATION
+*/
 
 document.documentElement.classList.add("js");
 
@@ -51,12 +47,6 @@ revealElements.forEach(function(element) {
     observer.observe(element);
 
 });
-
-
-/* =================================
-   3. ADD TO CART
-================================= */
-
 function addToCart(productName) {
 
     window.location.href =
@@ -64,12 +54,6 @@ function addToCart(productName) {
         encodeURIComponent(productName);
 
 }
-
-
-/* =================================
-   4. UPDATE CART COUNT
-================================= */
-
 function updateCartCount() {
 
     const cartCount = document.getElementById("cart_count");
@@ -96,11 +80,6 @@ function updateCartCount() {
 
 }
 
-
-/* =================================
-   5. UPDATE WISHLIST COUNT
-================================= */
-
 function updateWishlistCount() {
 
     const wishCount = document.getElementById("wish_count");
@@ -114,12 +93,7 @@ function updateWishlistCount() {
     wishCount.textContent = selectedHearts;
 
 }
-
-
-/* =================================
-   6. USER ACCOUNT AND DROPDOWN
-================================= */
-
+// user accont dropdown
 function updateAccountStatus() {
 
     const accountLink = document.getElementById("account-link");

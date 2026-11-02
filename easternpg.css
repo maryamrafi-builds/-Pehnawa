@@ -1119,10 +1119,6 @@ body {
 }
 
 
-/* =========================
-   2. PRODUCT IMAGE ZOOM
-========================= */
-
 .product-image {
     overflow: hidden;
 }
@@ -1135,11 +1131,6 @@ body {
     transform: scale(1.07);
 }
 
-
-/* =========================
-   3. PRODUCT CARD HOVER
-========================= */
-
 .product-card {
     transition:
         transform 0.35s ease,
@@ -1150,12 +1141,6 @@ body {
     transform: translateY(-7px);
     box-shadow: 0 12px 25px rgba(89, 53, 38, 0.10);
 }
-
-
-/* =========================
-   4. WISHLIST HEART
-========================= */
-
 .wishlist-btn {
     transition:
         transform 0.25s ease,
@@ -1184,12 +1169,6 @@ body {
         transform: scale(1);
     }
 }
-
-
-/* =========================
-   5. BUTTON ANIMATION
-========================= */
-
 .bag-btn,
 .shop-btn,
 .category-btn {
@@ -1210,10 +1189,6 @@ body {
     transform: translateY(-2px);
 }
 
-
-/* =========================
-   6. SCROLL ANIMATION
-========================= */
 
 .product-card.reveal {
     opacity: 0;
